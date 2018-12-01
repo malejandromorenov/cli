@@ -1,0 +1,4 @@
+FROM servicesapi/bosh-lite-resource
+
+RUN sed -i 's/git clone $uri/git clone $uri sapi-env-pool/' /opt/resource/out
+RUN sed -i 's/broken_pool="broken-bosh-lites"/broken_pool="bosh-lites-to-be-deleted"/' /opt/resource/out

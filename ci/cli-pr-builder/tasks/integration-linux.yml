@@ -40,6 +40,8 @@ run:
 
     cd $GOPATH/src/code.cloudfoundry.org/cli
     make build
+    export PATH=$PWD/out:$PATH
+
     go get -u github.com/onsi/ginkgo/ginkgo
 
     ginkgo -r -nodes=$NODES -flakeAttempts=2 -slowSpecThreshold=60 -randomizeAllSpecs integration/shared/isolated integration/v6/isolated integration/shared/plugin integration/v6/push
